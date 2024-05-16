@@ -18,7 +18,9 @@ const AgentsSchema = new mongoose.Schema({
        },
 
        gender:{
-        type: String,
+        type: {
+              name:Str
+        },
         required:true,
        },
        addharnumber:{
@@ -30,5 +32,7 @@ const AgentsSchema = new mongoose.Schema({
         type: String,
         required:true,
        },
+},{
+       timestamps:true
 });
 module.exports = mongoose.model('customer',AgentsSchema);

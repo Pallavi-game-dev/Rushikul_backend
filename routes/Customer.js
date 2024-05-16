@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const CustomerSchema = require('../models/CustomerSchema');
+const CustomerSchema = require('../models/customerSchema')
 const {body,validationResult} = require('express-validator')
 
 
@@ -41,6 +41,17 @@ router.post('/createcustomer',[
         }
        
     
-    })
+    });
 
+
+    // Get All customer 
+    router.get('/getcustomer',async(req,res)=>{
+        try {
+            const customer = await CustomerSchema.find();
+            res.json(customer);
+        } catch (error) {
+            console.log(error);
+            res.status(500).send("Some wents wrong")
+        }
+    });
 module.exports = router;

@@ -60,15 +60,12 @@ const validuser = require('../middleware/validuser')
     
         try {
             let userRecord = await AuthSchema.findOne({ user });
-            
-    
             if (!userRecord) {
                 return res.status(400).json({ error: "Invalid credentials" });
             }
-            console.log("User Record:", password,userRecord.password);
             // Compare passwords
             const passwordCompare = await bcrypt.compare(password, userRecord.password);
-            console.log("Password Comparison Result:", passwordCompare);
+           
     
             if (!passwordCompare) {
                 return res.status(400).json({ error: "Invalid credentials" });
