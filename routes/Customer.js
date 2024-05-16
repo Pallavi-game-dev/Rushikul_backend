@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const CustomerSchema = require('../models/customerSchema')
+const CustomerSchema = require('../models/CustomerSchema')
 const {body,validationResult} = require('express-validator')
 
 
@@ -22,7 +22,6 @@ router.post('/createcustomer',[
        
         try {
             let customer = await CustomerSchema.findOne({addharnumber:req.body.addharnumber});
-            console.log( "*****************************8",customer);
             if(customer){
                 return res.status(400).json({error:"Addhar Number Already Exits"});
             }
@@ -34,6 +33,8 @@ router.post('/createcustomer',[
                 gender:req.body.gender,
                 addharnumber:req.body.addharnumber,
                 pancard:req.body.pancard,
+                branch_id:req.body.branch_id,
+                user_id:req.body.user_id,
             });
             res.json(customer)
         } catch (error) {

@@ -43,14 +43,14 @@ const customerSchema = new mongoose.Schema({
     ref: "user",
     required:true,
   },
-  documents: {
-    type:[ {
-      name: String,
-      url: String,
-      status:String
-    }],
-    required: true,
-  },
+//   documents: {
+//     type:[ {
+//       name: String,
+//       url: String,
+//       status:String
+//     }],
+//     required: true,
+//   },
 });
 const Customer = mongoose.model("customer", customerSchema);
 module.exports = Customer;
