@@ -1,0 +1,63 @@
+Roles																						
+	Owner	1																				
+	Directors	2																				
+	General Manager 	3																				
+	Branch Manager 	4																				
+	Employee	5		role table																		
+	Agent	6			role_id	role_name																
+	customer	7																				
+				user table																		
+					userID	user name	useremail	user mobile	aadhar number	pannumber	role_id	documents	address	branch_code								
+																						
+				customer table																		
+					customer_id	first name	last name	mobilenumber	gender	address_id	adhar number	pan number	documents	branch id	user_id							
+																						
+				account table																		
+					account_number	customer_id	balance	branch id	status	type	Creation Date	updated Date	deposit_amount									
+									active/inactive	saving etc												
+				Pending Request																		
+					customer_id	new_data	old_data	status														
+						[{data:value,isApproved:false}]	[{data:value}]	true/false														
+																						
+				transation table																		
+					Transation_id	Customer_id	account_number	Transation Type	amount	balance	deposit -id	comment	load_id    									
+																						
+				loan table detail																		
+					load_id    	account number	customer_id	loan type	amount	Intrest Rate	loan trem(The duration of the loan)	start date	end date	paymnet frequency	paymnet amount	remaining balance	status	grace period	late payment penalty	prepayment penalty	processing fee	comments
+																						
+				loan table																		
+					loan id	loan type																
+																						
+				deposite type																		
+					deposit -id	deposit_type																
+																						
+				branch 																		
+					branch id	name 	address															
+																						
+				address																		
+					address_id	address	city	pincode	state	country	customer_id	verifivcation_status	updated_by	created_by	verified_by							
+
+
+
+Certainly! A "loan" table in a bank database could contain the following columns:
+
+1. Loan ID: A unique identifier for each loan.
+2. Customer ID: A reference to the customer who took the loan.
+3. Loan Type: Indicates the type of loan (e.g., personal loan, mortgage, auto loan).
+4. Loan Amount: The amount of money borrowed.
+5. Interest Rate: The interest rate associated with the loan.
+6. Loan Term: The duration of the loan (e.g., 12 months, 24 months).
+7. Start Date: The date when the loan was initiated.
+8. End Date: The date when the loan is expected to be fully repaid.
+9. Payment Frequency: Indicates how often payments are due (e.g., monthly, quarterly).
+10. Payment Amount: The fixed payment amount due at each payment interval.
+11. Remaining Balance: The outstanding balance remaining on the loan.
+12. Status: Indicates whether the loan is active, paid off, in default, or other status.
+13. Collateral: If the loan is secured, this could indicate the collateral provided.
+14. Grace Period: If applicable, the period after the due date within which the payment can be made without penalty.
+15. Late Payment Penalty: Any penalty incurred for late payments.
+16. Prepayment Penalty: Any penalty incurred for paying off the loan early.
+17. Origination Fee: Any fee associated with originating the loan.
+18. Processing Fee: Any fee associated with processing the loan application.
+19. Insurance Premium: If insurance is required for the loan, this column could indicate the premium amount.
+20. Comments/Notes: Any additional comments or notes related to the loan.
