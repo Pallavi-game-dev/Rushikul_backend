@@ -6,4 +6,4 @@ let transactionSchema = require('../models/transactionSchema');
 
 
 
-module.exports = router;
+export default router;

@@ -35,4 +35,4 @@ const AgentsSchema = new mongoose.Schema({
 },{
        timestamps:true
 });
-module.exports = mongoose.model('customer',AgentsSchema);
+export default mongoose.model('customer',AgentsSchema);

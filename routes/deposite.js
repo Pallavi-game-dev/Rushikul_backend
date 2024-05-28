@@ -1,9 +1,10 @@
-let express = require('express')
+import express from express;
+import depositetypeSchema from '../models/depositType';
 let router = express.Router();
-let depositetypeSchema = require('../models/depositType');
+// let depositetypeSchema = require('../models/depositType');
 
 
 
 
 
-module.exports = router;
+export default router;

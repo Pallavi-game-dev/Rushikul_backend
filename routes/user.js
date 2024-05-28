@@ -6,4 +6,4 @@ let userSchema = require('../models/userSchema');
 
 
 
-module.exports = router;
+export default router;

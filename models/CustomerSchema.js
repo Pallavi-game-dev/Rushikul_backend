@@ -1,5 +1,6 @@
-const mongoose = require("mongoose");
-const customerSchema = new mongoose.Schema({
+import mongoose,{ Schema, model } from 'mongoose';
+
+const customerSchema = new Schema({
   fname: {
     type: String,
     required: true,
@@ -18,7 +19,7 @@ const customerSchema = new mongoose.Schema({
   },
   address: {
     type: String,
-    required: true,
+
   },
   gender: {
     type: String,
@@ -51,6 +52,8 @@ const customerSchema = new mongoose.Schema({
 //     }],
 //     required: true,
 //   },
+},{
+  timestamps:true
 });
-const Customer = mongoose.model("customer", customerSchema);
-module.exports = Customer;
+const branch = model('customer',customerSchema);
+export default branch;

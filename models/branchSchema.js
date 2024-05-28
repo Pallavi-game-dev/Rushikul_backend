@@ -1,10 +1,11 @@
 import { Schema, model } from 'mongoose';
+
 const branchSchema = new Schema({
     branch_name:{
         type: String,
         required:true,
     },
-    branch_addresss:{
+    branch_address:{
         type: String,
         required:true,
     },

@@ -1,9 +1,11 @@
-const mongooseR = require("mongoose");
-const mongooseURI = "mongodb://localhost:27017/Rushikul"
+// db.js
+import mongoose from 'mongoose';
+
+const mongooseURI = "mongodb://localhost:27017/Rushikul";
 
 const connectToMongoDB = () => {
     return new Promise((resolve, reject) => {
-        mongooseR.connect(mongooseURI, {
+        mongoose.connect(mongooseURI, {
             useNewUrlParser: true,
             useUnifiedTopology: true
         })
@@ -17,4 +19,5 @@ const connectToMongoDB = () => {
         });
     });
 };
-module.exports = connectToMongoDB;
+
+export default connectToMongoDB;

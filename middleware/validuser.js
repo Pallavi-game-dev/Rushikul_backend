@@ -1,4 +1,5 @@
-const jwt = require('jsonwebtoken');
+// const jwt = require('jsonwebtoken');
+import jwt from 'jsonwebtoken';
 const JWT_CONST = "Rushikul $ is $ Good"
 const validuser = (req,res,next)=>{
     // get user from the jwt token
@@ -16,4 +17,4 @@ const validuser = (req,res,next)=>{
     }
     
 }
-module.exports = validuser;
+export default validuser;

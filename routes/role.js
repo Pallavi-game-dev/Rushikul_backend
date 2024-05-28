@@ -6,4 +6,4 @@ let roleSchema = require('../models/roleSchema');
 
 
 
-module.exports = router;
+export default router;

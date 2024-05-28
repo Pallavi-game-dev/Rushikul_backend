@@ -1,12 +1,19 @@
-const express = require('express');
-const router = express.Router();
-const AuthSchema = require('../models/AuthSchema');
-const {body,validationResult} = require('express-validator')
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const JWT_CONST = "Rushikul $ is $ Good"
-const validuser = require('../middleware/validuser')
+// const express = require('express');
+// const AuthSchema = require('../models/AuthSchema');
+// const {body,validationResult} = require('express-validator')
+// const bcrypt = require('bcryptjs');
+// const jwt = require('jsonwebtoken');
+// const validuser = require('../middleware/validuser')
 
+const JWT_CONST = "Rushikul $ is $ Good"
+
+import express from 'express';
+import AuthSchema from '../models/AuthSchema.js';
+import bcrypt from 'bcryptjs'
+import jwt from 'jsonwebtoken'
+import validuser from '../middleware/validuser.js'
+import {body,validationResult} from 'express-validator'
+const router = express.Router();
 
    // adding new user   .... no authentication required
    router.post('/createuser',[
@@ -97,4 +104,4 @@ const validuser = require('../middleware/validuser')
     })
     
 
-module.exports = router;
+export default router;
